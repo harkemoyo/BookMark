@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root{
+    --primary-color:#7c59b0;
+    --border-radius: 5px;
+}
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+body{
+    font-family: OpenSans, sans-serif;
+    background-color: var(--primary-color);
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h16v2h-6v6h6v8H8v-6H2v6H0V0zm4 4h2v2H4V4zm8 8h2v2h-2v-2zm-8 0h2v2H4v-2zm8-8h2v2h-2V4z' fill='%23ffffff' fill-opacity='0.24' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+h1{
+    text-align: center;
+    color: #fff;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 400px;
+    margin: 20px auto 10px;
+    user-select: none;
+}
+h1:hover{
+    background: rgba(0, 0, 0, 0.8);
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.item{
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: var(--border-radius);
+    margin: 10px;
+    padding: 1.5rem;
+
+}
+.item:hover{
+    background: rgba(0, 0, 0, 0.6);
+}
+.name{
+    margin-top: 1.5rem;
+    margin-right: 1.5rem;
+}
+.name img{
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.fa-times{
+  cursor: pointer;
+  float: right;
+  z-index: 2;
+}
+.modal-container{
+  display: none;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+}
+.show-modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal{
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  max-width: 95%;
+  width: 500px;
+  animation: modalopen 1s;
+}
+@keyframes modalopen{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+.close-icon{
+  position: relative;
+  float: right;
+  color: #fff;
+  font-size: 1.3rem;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+.modal-header{
+  background: var(--primary-color);
+  color: #fff;
+  padding: 15px;
+}
+h3{
+  margin: 0;
+}
+.modal-content{
+  padding: 1.2rem;
+  color: whitesmoke;
+
+}
+
+
+a {
+ text-transform: uppercase;
+ font-size: 1.1rem;
+ font-weight: bold;
+}
+a:link,
+a:visited{
+    color: #fff;
+    text-decoration: none;
+}
+a:hover,
+a:active{
+    text-decoration: underline;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+.form-group{
+  height: 55px;
+}
+.form-input{
+  width: 97%;
+  padding: 5px;
+  border:2px solid var(--primary-color);
+  outline: none;
+  display: block;
+  border-radius: var(--border-radius);
+}
+.form-label{
+  color: var(--primary-color);
+  display: block;
+  margin-top: 1rem;
+}
+button{
+  color: #fff;
+  cursor: pointer;
+  height: 30px;
+  width: 100px;
+  border: none;
+  border-radius: var(--border-radius);
+  margin-top: 1rem;
+  background: var(--primary-color);
+}
+button:hover{
+  filter: brightness(110%);
+}
+button:focus{
+  outline: none;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media (max-width:600px){
+  .container{
+    flex-direction: column;
+  }
+}
